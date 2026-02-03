@@ -3,21 +3,22 @@ repo: saras-status
 
 sites:
   - name: GitHub Pages
-    url: https://globetrotter-finance.github.io/saras-status/
+    url: https://statuschecks.sarasfinance.com
   - name: Backend Services Health 1
     url: https://ind-prod.sarasfinance.com/health
+  - name: Internal Dev Derver
+    url: https://ind-dev.sarasfinance.com/health
   - name: Frontend Application
     url: https://app.sarasfinance.com
 
 status-website:
   # Since you are using a github.io URL, we use baseUrl instead of cname
-  baseUrl: /saras-status
-  logoUrl: https://app.sarasfinance.com/img/logo-with-title.0c272aaa.svg
+  cname: statuschecks.sarasfinance.com
+  # baseUrl: /saras-status
+  # logoUrl: https://app.sarasfinance.com/img/logo-with-title.0c272aaa.svg
   name: Saras Status Page
-  introTitle: "**Saras Status**"
-  introMessage: This is the uptime monitor for our services services.
   navbar:
     - title: Status
-      href: /saras-status/
+      href: /
     - title: GitHub
       href: https://github.com/globetrotter-finance/saras-status
