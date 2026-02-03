@@ -10,7 +10,7 @@ sites:
   - name: Production Backend Services Health
     url: https://ind-prod.sarasfinance.com/health
 
-  - name: Internal Dev Derver
+  - name: Internal Dev Server
     url: https://ind-dev.sarasfinance.com/health
 
 status-website:
