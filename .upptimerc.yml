@@ -15,12 +15,9 @@ status-website:
   cname: statuschecks.sarasfinance.com
   logoUrl: https://app.sarasfinance.com/img/logo-with-title.0c272aaa.svg
   name: Saras Status Page
-  introTitle: "System Status"
   navbar:
     - title: Status
       href: /
-    - title: "Saras App"
-      href: https://app.sarasfinance.com
     - title: "Contact Support"
       href: mailto:support@sarasfinance.com
 
