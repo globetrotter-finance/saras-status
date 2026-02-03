@@ -2,23 +2,47 @@ owner: globetrotter-finance
 repo: saras-status
 
 sites:
-  - name: GitHub Pages
-    url: https://statuschecks.sarasfinance.com
-  - name: Backend Services Health 1
+  - name: Production Backend Services Health
     url: https://ind-prod.sarasfinance.com/health
   - name: Internal Dev Derver
     url: https://ind-dev.sarasfinance.com/health
-  - name: Frontend Application
+  - name: Saras Web App
     url: https://app.sarasfinance.com
+  - name: Saras Admin App
+    url: https://admin.sarasfinance.com
 
 status-website:
-  # Since you are using a github.io URL, we use baseUrl instead of cname
   cname: statuschecks.sarasfinance.com
-  # baseUrl: /saras-status
-  # logoUrl: https://app.sarasfinance.com/img/logo-with-title.0c272aaa.svg
+  logoUrl: https://app.sarasfinance.com/img/logo-with-title.0c272aaa.svg
   name: Saras Status Page
+  introTitle: "System Status"
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/globetrotter-finance/saras-status
+    - title: "Saras App"
+      href: https://app.sarasfinance.com
+    - title: "Contact Support"
+      href: mailto:support@sarasfinance.com
+
+  customCSS: |
+    :root {
+      --bg-color: #f8f9fa;         /* Light grey background */
+      --text-color: #2d3436;       /* Dark charcoal text */
+      --primary-color: #0984e3;    /* Professional blue for links */
+      --success-color: #00b894;    /* Mint green for 'Up' */
+      --error-color: #d63031;      /* Soft red for 'Down' */
+      --warning-color: #fdcb6e;    /* Orange/Yellow for 'Degraded' */
+    }
+
+    /* Hide Footer and Branding */
+    footer { display: none !important; }
+    .powered-by { display: none !important; }
+
+    /* Optional: Remove the "GitHub" link in the intro text */
+    .intro a { color: var(--primary-color); text-decoration: none; }
+
+workflowSchedule:
+  uptime: "*/5 * * * *"        # Checks status (5 mins)
+  responseTime: "0 23 * * *"   # Records response times (Default: Daily)
+  graphs: "0 0 * * *"          # Generates graphs (Default: Daily)
+  staticSite: "0 1 * * *"      # Rebuilds status page (Default: Daily)
