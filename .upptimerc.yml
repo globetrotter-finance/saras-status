@@ -2,20 +2,14 @@ owner: globetrotter-finance
 repo: saras-status
 
 sites:
-  - name: "--- WEB APPLICATIONS ---"
-    url: https://group1.invalid
   - name: Saras Web App
     url: https://app.sarasfinance.com
   - name: Saras Admin App
     url: https://admin.sarasfinance.com
   
-  - name: "--- PRODUCTION SERVERS ---"
-    url: https://group2.invalid
   - name: Production Backend Services Health
     url: https://ind-prod.sarasfinance.com/health
 
-  - name: "--- D SERVERS ---"
-    url: https://group3.invalid
   - name: Internal Dev Derver
     url: https://ind-dev.sarasfinance.com/health
 
@@ -40,28 +34,20 @@ status-website:
     }
 
     /* Hide Footer and Branding */
-    footer { display: none !important; }
-    .powered-by { display: none !important; }
-
-    /* Optional: Remove the "GitHub" link in the intro text */
-    .intro a { color: var(--primary-color); text-decoration: none; }
-    /* Group Header Styling */
-    /* This targets any site with "invalid" in the URL */
-    [href*="invalid"] {
-      pointer-events: none;
-      cursor: default;
-    }
-    [href*="invalid"] .status-dot {
+    footer,
+    .powered-by,
+    div[class*="powered-by"],
+    p[class*="powered-by"] {
       display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
     }
-    [href*="invalid"] h2, [href*="invalid"] .site-name {
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #636e72;
-      margin-top: 20px;
-      border-bottom: 2px solid #dfe6e9;
-      padding-bottom: 5px;
+    
+    /* Removes the bottom-most text specifically */
+    body > footer { 
+      display: none !important; 
     }
 
 workflowSchedule:
