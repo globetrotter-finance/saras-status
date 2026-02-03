@@ -1,0 +1,14 @@
+name: Restart Internal Dev Server
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  call-api:
+    if: contains(github.event.issue.labels.*.name, 'internal-dev-server')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call External API
+        run: |
+          curl -X POST https://internaldevserver.sarasfinance.com/restartInstance \
+          -H "Authorization: ${{ secrets.RESTART_INTERNAL_DEV_SERVER_API_TOKEN }}"
